@@ -167,6 +167,34 @@ body {
     &__lines {
       display: none;
     }
+  }
+
+  .es-features {
+    margin: 20px auto; 
+    &__titleWraper{
+      margin: auto;
+      width: fit-content;
+      height: 100%;
+      padding: 0 25px;
+      line-height: 25px;
+      text-align: center;
+      background: $orange;
+      transform: skewX(-45deg);
+    }
+    &__title{
+      display: inline-block;
+      // white-space: nowrap;
+      transform: skewX(45deg);
+      width: 100%;
+      margin: auto;
+      padding: 10px 0;
+      font-size: 18px;
+      font-weight: 700;
+      font-style: italic;
+      color: #fff;
+      text-align: center;
+      
+    }
 
   }
   @media screen and (min-width: 998px) {
