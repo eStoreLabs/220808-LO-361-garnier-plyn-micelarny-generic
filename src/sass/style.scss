@@ -12,6 +12,7 @@
 
 $regular: 'Montserrat', sans-serif;
 $orange: #f99201;
+$yellow: #f7dd52;
 
 html,
 body {
@@ -112,6 +113,62 @@ body {
       }
     }
   }
+
+  .es-ingr {
+    margin: 20px auto;
+    &__title {
+      @include text;
+      margin: auto;
+      padding: 20px 0;
+      font-size: 35px;
+      font-weight: 700;
+      font-style: italic;
+      color: $orange;
+      text-align: center;
+      width: 80%;
+    }
+    &__wrapper {
+      min-height: 442px;
+      background: url('../images/bg-ingr.png') no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    &__content {
+      padding: 0 10px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-around;
+      gap: 20px 20px;
+      & p {
+        @include text;
+        font-size: 15px;
+      }
+    }
+    &__left,
+    &__right {
+      max-width: 300px;
+      text-align: center;
+    }
+    &__triple {
+      margin: 10px auto;
+      width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+      &--text {
+        @include text;
+        font-size: 30px;
+        color: $yellow;
+        font-weight: 700;
+      }
+    }
+    &__lines {
+      display: none;
+    }
+
+  }
   @media screen and (min-width: 998px) {
     .es-kv {
       &__container {
@@ -136,6 +193,38 @@ body {
       }
       &__subtitle {
         margin: 10px 0;
+      }
+    }
+    .es-ingr {
+      &__title {
+        padding-bottom: 60px;
+      }
+      &__container {
+        position: relative;
+      }
+      &__left {
+        position: absolute;
+        left: 10px;
+        top: 0;
+        width: 38%;
+      }
+      &__right {
+        position: absolute;
+        right: 10px;
+        bottom: 0;
+        width: 38%;
+      }
+      &__lines {
+        position: absolute;
+        display: block;
+        &--left {
+          left: 145px;
+          top: 190px;
+        }
+        &--right {
+          right: 145px;
+          bottom: 190px;
+        }
       }
     }
   }
