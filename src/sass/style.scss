@@ -14,6 +14,9 @@ $regular: 'Montserrat', sans-serif;
 $orange: #f99201;
 $yellow: #f7dd52;
 $yellow-light: #fff19e;
+$button: #f5835a;
+$primary: #f47242;
+$secondary: #f75172;
 
 html,
 body {
@@ -93,6 +96,9 @@ body {
     &__logo {
       @include img;
       margin: 20px auto;
+      opacity: 0;
+      animation: slidedown 0.8s ease forwards;
+      animation-delay: 0.9s;
     }
     &__new {
       margin: 10px auto;
@@ -151,6 +157,16 @@ body {
       max-width: 300px;
       text-align: center;
     }
+    &__left {
+      opacity: 0;
+      animation: slideright 0.8s ease forwards;
+      animation-delay: 0.9s;
+    }
+    &__right {
+      opacity: 0;
+      animation: slideleft 0.8s ease forwards;
+      animation-delay: 0.9s;
+    }
     &__triple {
       margin: 10px auto;
       width: 100%;
@@ -206,10 +222,17 @@ body {
       flex-direction: column;
       justify-content: flex-start;
       max-width: 280px;
+      max-height: 100%;
+      overflow: hidden;
+      &:hover {
+        .es-features__img {
+          transform: scale(1.1);
+        }
+      }
     }
     &__img {
       @include img;
-      
+      transition: all 0.3s;
     }
     &__image {
       @include img;
@@ -381,7 +404,121 @@ body {
       color: black;
       text-align: left;
     }
-  }  
+  }
+  .es-cross {
+    margin: 20px auto; 
+    &__titleWraper{
+      margin: 0 auto 20px;
+      width: fit-content;
+      height: 100%;
+      padding: 0 25px;
+      line-height: 25px;
+      text-align: center;
+      background: $orange;
+      transform: skewX(-45deg);
+    }
+    &__title{
+      display: inline-block;
+      transform: skewX(45deg);
+      width: 100%;
+      margin: auto;
+      padding: 10px 0;
+      font-size: 18px;
+      font-weight: 700;
+      font-style: italic;
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    &__products {
+      padding-top: 30px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px 2px;
+      justify-content: space-between;
+    }
+
+    &__product {
+      width: 162px;
+      margin: 0 auto;
+      margin-bottom: 32px;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      &:hover .es-cross__link::before {
+        transform: scaleX(1);
+      }
+      &:hover .es-cross__packshot {
+        transform: translateY(-8px);
+      }
+    }
+    &__packshot {
+      transition: transform 0.6s;
+      margin-bottom: 24px;
+    }
+    &__text {
+      @include text;
+      font-size: 13px;
+      font-weight: 400;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    &__desc {
+      @include text;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+    &__link {
+      @include text;
+      position: relative;
+      display: inline-block;
+      padding: 16px 22px;
+      text-decoration: none;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 500;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+      background: $orange;
+      transition: color 0.3s ease-in-out;
+      z-index: 1;
+      &::before {
+        content: '';
+        position: absolute;
+        border-radius: 4px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        background-color: $yellow;
+        transition: transform 0.3s ease-in-out;
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+    }
+    &__img {
+      @include img;
+      transition: all 0.3s ease-in-out;
+    }
+  } 
+  
+  .es-footer {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 10px;
+    &__bg {
+      @include img;
+      padding-top: 20px;
+    }
+    &__logo {
+      padding-top: 40px;
+      width: 200px;
+      @include img;
+    }
+  }
   @media screen and (min-width: 998px) {
     .es-kv {
       &__container {
@@ -455,5 +592,46 @@ body {
         left: -20px;
       }
     }
+    .es-cross {
+      &__product {
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+
+@keyframes slideright {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideleft {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slidedown {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
