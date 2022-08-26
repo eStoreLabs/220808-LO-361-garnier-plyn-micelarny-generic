@@ -217,7 +217,7 @@ body {
     &__triple {
       text-align: center;
       margin: 0;
-      padding: 20px 0 20px 20px;
+      padding: 30px 0 20px 20px;
       width: 100%;
       &--top img,
       &--bottom img{
@@ -232,12 +232,63 @@ body {
     }
     &__number {
       position: absolute;
-      top: 35px;
+      top: 45px;
       left:0;
       font-size: 65px;
       font-weight: 800;
       color: $yellow;
       line-height: 0;
+    }
+  }
+  .es-formula {
+    margin: 20px auto 60px;
+    &__title {
+      @include text;
+      margin: auto;
+      padding: 20px 0;
+      font-size: 35px;
+      font-weight: 700;
+      font-style: italic;
+      color: $orange;
+      text-align: center;
+      width: 80%;
+      text-transform: uppercase;
+      & span {
+        font-size: 20px;
+      }
+    }
+    &__wrapper {
+      padding-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &__left {
+      max-width: 498px;
+      & img {
+        @include img;
+        padding: 20px;
+      }
+    }
+    &__right {
+      max-width: 498px;
+      background: url('../images/formula-right.png') no-repeat;
+      background-size: auto;
+      background-position: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      gap: 20px 20px;
+    }
+    &__single {
+      width: 230px;
+      height: 230px;
+      padding: 30px 10px;
+      text-align: center;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0px 0px 10px 0px rgba(121, 115, 115, 1);
     }
 
   }
