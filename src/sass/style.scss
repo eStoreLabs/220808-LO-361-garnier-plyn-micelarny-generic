@@ -290,8 +290,50 @@ body {
       border-radius: 20px;
       box-shadow: 0px 0px 10px 0px rgba(121, 115, 115, 1);
     }
-
   }
+  .es-use {
+    margin: 20px auto; 
+    &__titleWraper{
+      margin: 0 auto 20px;
+      width: 60%;
+      height: 100%;
+      padding: 0 25px;
+      line-height: 25px;
+      text-align: center;
+      background: $orange;
+      transform: skewX(-45deg);
+    }
+    &__title{
+      display: inline-block;
+      transform: skewX(45deg);
+      width: 100%;
+      margin: auto;
+      padding: 10px 0;
+      font-size: 18px;
+      font-weight: 700;
+      font-style: italic;
+      color: #fff;
+      text-align: center;
+    }
+    &__wrapper {
+      padding-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px 20px;
+    }
+    &__single {
+      padding: 0 10px;
+      max-width: 450px;
+      & img {
+        @include img;
+      }
+    }
+    &__text {
+      @include text;
+      padding: 20px 0;
+    }
+  }  
   @media screen and (min-width: 998px) {
     .es-kv {
       &__container {
