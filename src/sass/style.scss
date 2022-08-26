@@ -333,6 +333,54 @@ body {
       @include text;
       padding: 20px 0;
     }
+  } 
+
+  .es-pack {
+    margin: 20px auto 60px;
+    &__wrapper {
+      padding-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    &__left {
+      max-width: 498px;
+      & img {
+        @include img;
+        padding: 20px;
+      }
+    }
+    &__right {
+      max-width: 498px;
+      padding-left: 15%;
+    }
+    &__title {
+      @include text;
+      padding: 20px 0;
+      font-size: 25px;
+      font-weight: 700;
+      font-style: italic;
+      color: $orange;
+      text-align: cleft;
+      width: 100%;
+      text-transform: uppercase;
+    }
+    &__single {
+      margin: 20px auto;
+      width: 100%;
+      font-size: 13px;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+    }
+    &__item {
+      @include text;
+      margin-left: 1em;
+      width: 100%;
+      color: black;
+      text-align: left;
+    }
   }  
   @media screen and (min-width: 998px) {
     .es-kv {
@@ -395,6 +443,16 @@ body {
     .es-features {
       &__wrapper {
         background-image: linear-gradient(180deg, #fff 35%,$yellow-light 35% 65%,#fff 65%);
+      }
+    }
+    .es-pack {
+      &__right {
+        position: relative;
+      }
+      &__single::before{
+        content: url(../images/pack-line.png);
+        position: absolute;
+        left: -20px;
       }
     }
   }
